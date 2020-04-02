@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/login/login_page.dart';
 
-import 'login_page.dart';
+import 'package:todo/screens/home_screen.dart';
+import 'package:todo/providers/todos_model.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(TodosApp());
 
-class MyApp extends StatelessWidget {
+class TodosApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Login',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ChangeNotifierProvider(
+      builder: (context) => TodosModel(),
+      child: MaterialApp(
+        title: 'Todos',
+        theme: ThemeData.dark(),
+        home: LoginPage(),
       ),
-      home: LoginPage(),
     );
   }
 }

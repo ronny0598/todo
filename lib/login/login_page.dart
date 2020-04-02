@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo/first_screen.dart';
-import 'package:todo/sign_in.dart';
+import 'package:todo/screens/home_screen.dart';
+import 'package:todo/login/sign_in.dart';
+
+import '../screens/home_screen.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -35,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return TodoApp();
+                return HomeScreen();
               },
             ),
           );
